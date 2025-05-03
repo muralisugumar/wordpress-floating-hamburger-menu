@@ -1,0 +1,98 @@
+<!-- Floating Hamburger Menu -->
+<div class="floating-menu-wrapper">
+ <div class="floating-menu-toggle" onclick="toggleFloatingMenu()" id="menuToggleIcon">
+  ☰
+</div>
+
+  <div class="floating-submenu" id="floatingSubMenu">
+    <a href="https://wa.me/919042678777" target="_blank" aria-label="Chat on WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+    <a href="/contact" aria-label="Contact Page">
+      <img src="https://img.icons8.com/ios-filled/50/000000/contacts.png" alt="Contact" />
+    </a>
+  </div>
+</div>
+
+<style>
+/* Wrapper */
+.floating-menu-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Hamburger Icon */
+.floating-menu-toggle {
+  background-color: #333;
+  color: white;
+  font-size: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Add rotation */
+.floating-menu-toggle.rotate {
+  transform: rotate(180deg);
+}
+
+
+/* Submenu */
+.floating-submenu {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.floating-submenu a {
+  background: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.floating-submenu a:hover {
+  transform: scale(1.1);
+}
+
+.floating-submenu img {
+  width: 32px;
+  height: 32px;
+}
+</style>
+
+<script>
+function toggleFloatingMenu() {
+  const menu = document.getElementById('floatingSubMenu');
+  const icon = document.getElementById('menuToggleIcon');
+
+  const isOpen = menu.style.display === 'flex';
+  menu.style.display = isOpen ? 'none' : 'flex';
+
+  // Toggle icon text
+  icon.textContent = isOpen ? '☰' : '✖';
+
+  // Toggle rotation
+  icon.classList.toggle('rotate');
+}
+</script>
+
+
