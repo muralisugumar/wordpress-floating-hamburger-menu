@@ -1,0 +1,61 @@
+/* Floating menu wrapper */
+.floating-menu-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Hamburger Icon */
+.floating-menu-toggle {
+  background-color: #333;
+  color: white;
+  font-size: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Rotation class */
+.floating-menu-toggle.rotate {
+  transform: rotate(180deg);
+}
+
+/* Submenu styling */
+.floating-submenu {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.floating-submenu a {
+  background: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.floating-submenu a:hover {
+  transform: scale(1.1);
+}
+
+.floating-submenu img {
+  width: 32px;
+  height: 32px;
+}
